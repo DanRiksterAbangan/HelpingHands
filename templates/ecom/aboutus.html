@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Helping Hands | About</title>
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+<!-- About 1 - Bootstrap Brain Component -->
+<div class="sm:flex items-center max-w-screen-xl">
+    <div class="sm:w-1/2 p-10">
+        <div class="image object-center text-center">
+            <img src="{% static 'images/cleaning.jpg' %}">
+        </div>
+    </div>
+    <div class="sm:w-1/2 p-5">
+        <div class="text text-white">
+            <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">About <span class="text-indigo-600">Our Company</span>
+            </h2>
+            <p class="text-gray-300">
+
+Welcome to Helping Hands, where cleanliness meets care. We are dedicated to providing top-notch cleaning services that transform your space into a haven of freshness and order. Our skilled team, equipped with advanced tools and eco-friendly products, is committed to delivering meticulous, reliable cleaning tailored to your unique needs. Whether you're looking for regular maintenance or a thorough deep clean, we strive to ensure your home or business is not just clean, but truly revitalized.
+            </p>
+        </div>
+    </div>
+</div>
+  {% include "ecom/footer.html" %}
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>
