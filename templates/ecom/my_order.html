@@ -6,8 +6,8 @@
   @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 body {
-    background-color: #f7f7f7;
-    /* font-family: 'Open Sans', serif */
+    background-color: #0f172a;
+     font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -26,10 +26,11 @@ body {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #26272b;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0.10rem
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #d1d5db;
 }
 
 .card-header:first-child {
@@ -94,7 +95,7 @@ body {
 
 .track .step.active .text {
     font-weight: 400;
-    color: #000
+    color: #d1d5db;
 }
 
 .track .text {
@@ -161,7 +162,7 @@ p {
 </style>
 <br>
 <div class="container">
-    <header class="card-header" style="text-align:center; font-size: 21px"> My Orders / Tracking </header>
+    <header class="card-header" style="text-align:center; font-size: 21px; background-color:#26272b; border: 1px solid; border-radius: 10px; color: #d1d5db"> My Orders / Tracking </header>
 
     {% for products,order in data %}
 
@@ -176,7 +177,7 @@ p {
                       <div class="aside"><img src="{% static product.product_image.url %}" class="img-sm border"></div>
                       <figcaption class="info align-self-center">
 
-                          <p class="title"><strong>Name : </strong>{{product.name}} <br> <strong>Description : </strong>{{product.description}} <br> <strong>Price : </strong>${{product.price}}</p> 
+                          <p class="title" style="color: #d1d5db"><strong>Name : </strong>{{product.name}} <br> <strong>Description : </strong>{{product.description}} <br> <strong>Price : </strong>${{product.price}}</p>
 
                       </figcaption>
 

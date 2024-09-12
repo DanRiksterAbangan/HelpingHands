@@ -4,11 +4,14 @@
 {% block content %}
 
   <style type="text/css">
+      body {
+      background-color: #0f172a;
+      font: 15px "Roboto", sans-serif;
+      }
 .form-style-1 {
 	margin:10px auto;
 	max-width: 400px;
 	padding: 20px 12px 10px 20px;
-	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .form-style-1 li {
 	padding: 0;
@@ -20,7 +23,6 @@
 	margin:0 0 3px 0;
 	padding:0px;
 	display:block;
-	font-weight: bold;
 }
 .form-style-1 input[type=text],
 .form-style-1 input[type=date],
@@ -35,7 +37,7 @@ select{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	border:1px solid #BEBEBE;
+	border: 1px;
 	padding: 7px;
 	margin:0px;
 	-webkit-transition: all 0.30s ease-in-out;
@@ -43,6 +45,12 @@ select{
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
 	outline: none;
+	border-radius: 10px;
+	background-color: #374151;
+	color: #fff;
+	font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 .form-style-1 input[type=text]:focus,
 .form-style-1 input[type=date]:focus,
@@ -93,28 +101,28 @@ select{
   {% csrf_token %}
 <ul class="form-style-1">
     <li>
-        <label>Email <span class="required">*</span></label>
-        {% render_field addressForm.Email class="field-long" placeholder="Email" %}
+        <label style="color:#d1d5db">Your Email <span class="required" style="color:#d1d5db"> </span></label>
+        {% render_field addressForm.Email class="field-long" placeholder="name@email.com" %}
 
     </li>
     <li>
-        <label>Mobile <span class="required">*</span></label>
+        <label style="color:#d1d5db">Mobile Number <span class="required" style="color:#d1d5db"> </span></label>
         {% render_field addressForm.Mobile class="field-long" placeholder="Mobile" %}
     </li>
 
     <li>
-        <label>Shipment Address <span class="required">*</span></label>
-        {% render_field addressForm.Address id="field5" class="field-long field-textarea" placeholder="Building Number,city, pin" %}
+        <label style="color:#d1d5db">Complete Address <span class="required" style="color:#d1d5db"> </span></label>
+        {% render_field addressForm.Address id="field5" class="field-long field-textarea" placeholder="Building Number, Barangay, and City" %}
 
     </li>
     <li>
-        <input type="submit" value="Proceed To Pay" />
+        <input type="submit" value="Proceed To Pay" style="border-radius: 10px; font-weight:bold"/>
     </li>
 </ul>
 </form>
 {%else%}
 <br><br>
-<h1 style="text-align:center; color:red;"> First Add Product In Cart </h1>
+<h1 style="text-align:center; color:#d1d5db;"> Please avail our services first. </h1>
 <br><br><br><br><br><br><br><br><br><br>
 {%endif%}
 
